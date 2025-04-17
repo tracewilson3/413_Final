@@ -11,17 +11,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<WaterDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("WaterConnection"))); // change
+builder.Services.AddDbContext<FinalDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("FinalConnection")));
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "http://brave-sky-05b62981e.6.azurestaticapps.net/")
-            .AllowCredentials()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+        policy.WithOrigins(
+    "https://brave-sky-05b62981e.6.azurestaticapps.net",
+    "http://localhost:3000"
+)
+.AllowAnyHeader()
+.AllowAnyMethod()
+.AllowCredentials();
+
     });
 });
 
