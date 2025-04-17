@@ -2,8 +2,7 @@ import { useState } from 'react'
 
 import '../App.css'
 import ProjectList from '../components/ProjectList'
-import CookieConsent, { Cookies } from "react-cookie-consent";
-import Fingerprint from '../components/Fingerprint';
+
 import CategoryFilter from '../components/CategoryFilter';
 import WelcomeBand from '../components/WelcomeBand';
 import CartSummary from '../components/CartSummary';
